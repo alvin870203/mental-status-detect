@@ -1,0 +1,61 @@
+TY  - CONF
+TI  - CosFace: Large Margin Cosine Loss for Deep Face Recognition
+T2  - 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 5265
+EP  - 5274
+AU  - H. Wang
+AU  - Y. Wang
+AU  - Z. Zhou
+AU  - X. Ji
+AU  - D. Gong
+AU  - J. Zhou
+AU  - Z. Li
+AU  - W. Liu
+PY  - 2018
+KW  - convolution
+KW  - face recognition
+KW  - feedforward neural nets
+KW  - learning (artificial intelligence)
+KW  - deep convolutional neural networks
+KW  - face verification
+KW  - face feature discrimination
+KW  - deep CNNs
+KW  - center loss
+KW  - angular softmax loss
+KW  - loss function
+KW  - normalization
+KW  - cosine decision margin maximization
+KW  - face identification
+KW  - loss functions
+KW  - intra-class variance
+KW  - inter-class variance
+KW  - deep face recognition
+KW  - large margin cosine loss
+KW  - CosFace
+KW  - large margin softmax loss
+KW  - LMCL
+KW  - weight vectors
+KW  - MegaFace Challenge
+KW  - Youtube Faces
+KW  - Labeled Face in the Wild
+KW  - YTF
+KW  - LFW
+KW  - Face
+KW  - Face recognition
+KW  - Testing
+KW  - Mars
+KW  - Training
+KW  - Feature extraction
+KW  - Task analysis
+DO  - 10.1109/CVPR.2018.00552
+JO  - 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition
+IS  - 
+SN  - 2575-7075
+VO  - 
+VL  - 
+JA  - 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition
+Y1  - 18-23 June 2018
+AB  - Face recognition has made extraordinary progress owing to the advancement of deep convolutional neural networks (CNNs). The central task of face recognition, including face verification and identification, involves face feature discrimination. However, the traditional softmax loss of deep CNNs usually lacks the power of discrimination. To address this problem, recently several loss functions such as center loss, large margin softmax loss, and angular softmax loss have been proposed. All these improved losses share the same idea: maximizing inter-class variance and minimizing intra-class variance. In this paper, we propose a novel loss function, namely large margin cosine loss (LMCL), to realize this idea from a different perspective. More specifically, we reformulate the softmax loss as a cosine loss by L2 normalizing both features and weight vectors to remove radial variations, based on which a cosine margin term is introduced to further maximize the decision margin in the angular space. As a result, minimum intra-class variance and maximum inter-class variance are achieved by virtue of normalization and cosine decision margin maximization. We refer to our model trained with LMCL as CosFace. Extensive experimental evaluations are conducted on the most popular public-domain face recognition datasets such as MegaFace Challenge, Youtube Faces (YTF) and Labeled Face in the Wild (LFW). We achieve the state-of-the-art performance on these benchmarks, which confirms the effectiveness of our proposed approach.
+ER  - 
+
+

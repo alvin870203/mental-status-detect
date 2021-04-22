@@ -1,0 +1,45 @@
+TY  - CONF
+TI  - ArcFace for Disguised Face Recognition
+T2  - 2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW)
+SP  - 485
+EP  - 493
+AU  - J. Deng
+AU  - S. Zafeririou
+PY  - 2019
+KW  - face recognition
+KW  - feature extraction
+KW  - visual databases
+KW  - intra-class compactness
+KW  - inter-class discrepancy
+KW  - high intra-class diversity
+KW  - inter-class similarity
+KW  - disguised face recognition dataset
+KW  - DFW2019 challenge
+KW  - face detection
+KW  - ArcFace
+KW  - deep face recognition
+KW  - RetinaFace
+KW  - face feature embedding
+KW  - large-scale in-the-wild dataset
+KW  - Face
+KW  - Face recognition
+KW  - Training
+KW  - Face detection
+KW  - Detectors
+KW  - Protocols
+KW  - Euclidean distance
+KW  - RetinaFace
+KW  - ArcFace
+KW  - Disguised Face Recognition
+DO  - 10.1109/ICCVW.2019.00061
+JO  - 2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW)
+IS  - 
+SN  - 2473-9944
+VO  - 
+VL  - 
+JA  - 2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW)
+Y1  - 27-28 Oct. 2019
+AB  - Even though deep face recognition is extensively explored and remarkable advances have been achieved on large-scale in-the-wild dataset, disguised face recognition receives much less attention. Face feature embedding targeting on intra-class compactness and inter-class discrepancy is very challenging as high intra-class diversity and inter-class similarity are very common on the disguised face recognition dataset. In this report, we give the technical details of our submission to the DFW2019 challenge. By using our RetinaFace for face detection and alignment and ArcFace for face feature embedding, we achieve state-of-the-art performance on the DFW2019 challenge.
+ER  - 
+
+
