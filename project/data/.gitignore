@@ -1,0 +1,51 @@
+# Added by Chih-Yuan Chuang
+**/*.avi
+**/*.png
+# chihyuan@vision:~/MyThesis-main/project/data$ tree -d .
+# .
+# └── CAER
+#     ├── CAER
+#     │   └── CAER
+#     │       ├── test
+#     │       │   ├── Anger
+#     │       │   ├── Disgust
+#     │       │   ├── Fear
+#     │       │   ├── Happy
+#     │       │   ├── Neutral
+#     │       │   ├── Sad
+#     │       │   └── Surprise
+#     │       ├── train
+#     │       │   ├── Anger
+#     │       │   ├── Disgust
+#     │       │   ├── Fear
+#     │       │   ├── Happy
+#     │       │   ├── Neutral
+#     │       │   ├── Sad
+#     │       │   └── Surprise
+#     │       └── validation
+#     │           ├── Anger
+#     │           ├── Disgust
+#     │           ├── Fear
+#     │           ├── Happy
+#     │           ├── Neutral
+#     │           ├── Sad
+#     │           └── Surprise
+#     └── CAER-S
+#         └── CAER-S
+#             ├── test
+#             │   ├── Anger
+#             │   ├── Disgust
+#             │   ├── Fear
+#             │   ├── Happy
+#             │   ├── Neutral
+#             │   ├── Sad
+#             │   └── Surprise
+#             └── train
+#                 ├── Angry
+#                 ├── Disgust
+#                 ├── Fear
+#                 ├── Happy
+#                 ├── Neutral
+#                 ├── Sad
+#                 └── Surprise
+
