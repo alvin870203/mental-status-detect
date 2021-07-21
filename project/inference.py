@@ -62,6 +62,9 @@ def main():
     long_seq_prob = deque([])
     long_seq_size = 64
     window_size = 16
+    # ----- 20210722 ----- #
+    model_output = []
+    # -------------------- #
     if (cap.isOpened()== False): 
         print("Error opening video stream or file")
     while(cap.isOpened()):
@@ -75,7 +78,14 @@ def main():
             # assert i == -1
             # cv2.imshow('Frame', frame) 
             # cv2.putText(frame, label_table[np.argmax(emotion_count)], (max_face_info[0], int(max_face_info[2] - 5)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 4)
-            face, context, landmark = detFace(fa, frame)
+            
+            # ----- 20170721 ----- #
+            try:
+                face, context, landmark = detFace(fa, frame)
+            except:
+                print(f"No faces were detected (Error at line 81 from inference.py)")
+                continue
+            # -------------------- #
             
 
             collectBatch(face, f_transform, f_stack, window_size)
@@ -96,6 +106,9 @@ def main():
                     c_tensor = torch.stack(list(copy.deepcopy(c_stack))).to(device)
 
                     output = model(f_tensor, c_tensor).mean(0)
+                    # ----- 20210722 ----- #
+                    model_output.append(output.cpu().tolist())
+                    # -------------------- #
                     pred_class = output.argmax()
                     pred_label = label_template[pred_class]
                     arousal_label = ''
@@ -156,6 +169,10 @@ def main():
                     cv2.imshow('frame', frame)
         else: 
             break
+
+    # ----- 20210722 ----- #
+    torch.save(model_output, "output/model_output_test_mp4.pth")
+    # -------------------- #
 
     cap.release()
     cv2.destroyAllWindows()
