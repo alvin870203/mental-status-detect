@@ -54,7 +54,7 @@ class Net(nn.Module):
         graph_feat   = self.bottleneck(torch.cat([f_graph_feat, c_graph_feat], dim=1))
         # predict => sphere mapping
         output = torch.mm(F.normalize(graph_feat, dim=-1), 
-                          F.normalize(self.weight, dim=0)).clamp(min=-1, max=1.)
+                          F.normalize(self.weight, dim=0)).clamp(min=-1, max=1.)  # TODO: the features before classifier, Size([N, 256]), extract it!
         if self.training and label is not None:
             one_hot = torch.zeros(output.shape, device='cuda')
             one_hot.scatter_(1, label.view(-1, 1).long(), 1)
