@@ -1,4 +1,5 @@
 import copy
+from operator import mod
 import os
 import time
 from collections import Counter, deque
@@ -105,9 +106,15 @@ def main():
                     f_tensor = torch.stack(list(copy.deepcopy(f_stack))).to(device)
                     c_tensor = torch.stack(list(copy.deepcopy(c_stack))).to(device)
 
-                    output = model(f_tensor, c_tensor).mean(0)
                     # ----- 20210722 ----- #
-                    model_output.append(output.cpu().tolist())
+                    # output = model(f_tensor, c_tensor).mean(0)
+                    output, features = model(f_tensor, c_tensor)
+                    features = features.mean(0)
+                    output = output.mean(0)
+                    # ----- 20210722 ----- #
+                    # model_output.append(output.cpu().tolist())
+                    # -------------------- #
+                    model_output.append(features.cpu().tolist())
                     # -------------------- #
                     pred_class = output.argmax()
                     pred_label = label_template[pred_class]

@@ -53,8 +53,14 @@ class Net(nn.Module):
         c_graph_feat = self.gap(self.c_graph_module(c_feat, f_feat)).view(b, -1)
         graph_feat   = self.bottleneck(torch.cat([f_graph_feat, c_graph_feat], dim=1))
         # predict => sphere mapping
-        output = torch.mm(F.normalize(graph_feat, dim=-1), 
-                          F.normalize(self.weight, dim=0)).clamp(min=-1, max=1.)  # TODO: the features before classifier, Size([N, 256]), extract it!
+
+        # ----- 20210727 ----- #
+        # output = torch.mm(F.normalize(graph_feat, dim=-1),
+        #                   F.normalize(self.weight, dim=0)).clamp(min=-1, max=1.)
+        features = F.normalize(graph_feat, dim=-1)  # features before classifier, Size([N, 256])
+        output = torch.mm(features,  # the features before classifier, Size([N, 256]), extract it!
+                          F.normalize(self.weight, dim=0)).clamp(min=-1, max=1.)
+        # -------------------- #
         if self.training and label is not None:
             one_hot = torch.zeros(output.shape, device='cuda')
             one_hot.scatter_(1, label.view(-1, 1).long(), 1)
@@ -65,4 +71,7 @@ class Net(nn.Module):
             restrict_loss = torch.cat([pos_loss, neg_loss], dim=0).norm(p=2) / b
             return output * self.s, self.gap(f_feat).view(b, -1), self.gap(c_feat).view(b, -1), restrict_loss
         else:
-            return output
+            # ----- 20210727 ----- #
+            # return output
+            return output, features  # return features before classifier, Size([N, 256])
+            # -------------------- #
