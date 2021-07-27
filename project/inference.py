@@ -64,7 +64,7 @@ def main():
     long_seq_size = 64
     window_size = 16
     # ----- 20210722 ----- #
-    model_output = []
+    video_features = []  # list of all the features along time of a whole video
     # -------------------- #
     if (cap.isOpened()== False): 
         print("Error opening video stream or file")
@@ -114,7 +114,7 @@ def main():
                     # ----- 20210722 ----- #
                     # model_output.append(output.cpu().tolist())
                     # -------------------- #
-                    model_output.append(features.cpu().tolist())
+                    video_features.append(features.cpu().tolist())
                     # -------------------- #
                     pred_class = output.argmax()
                     pred_label = label_template[pred_class]
@@ -178,7 +178,7 @@ def main():
             break
 
     # ----- 20210722 ----- #
-    torch.save(model_output, "output/model_output_test_mp4.pth")
+    torch.save(video_features, "output/model_output_test_mp4.pth")
     # -------------------- #
 
     cap.release()
