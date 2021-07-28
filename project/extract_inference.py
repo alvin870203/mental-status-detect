@@ -29,7 +29,6 @@ from pathlib import Path
 import openpyxl as xl
 
 def main():
-    data_dir = "/myHDD/chihyuan_data/schizo_frames"
     schizo_videos_dir = "/myHDD/chihyuan_data/schizo_data"
     extensions = ("**/*.mp4", "**/*.MP4")
 
@@ -89,7 +88,7 @@ def infer(video_path="./test.mp4", video_name="test"):
 
     (lBegin, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eyebrow"]
     (rBegin, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eyebrow"]
-     
+    
     f_transform = build_transforms(cfg, is_train=False, is_face=True)
     c_transform = build_transforms(cfg, is_train=False, is_face=False)
 
