@@ -127,7 +127,7 @@ def infer(video_path="./test.mp4", video_name="test"):
             try:
                 face, context, landmark = detFace(fa, frame)
             except:
-                print(f"No faces were detected (Error at line 81 from inference.py)")
+                # print(f"No faces were detected (Error at line 81 from inference.py)")
                 continue
             # -------------------- #
             
