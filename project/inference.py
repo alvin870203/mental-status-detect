@@ -47,7 +47,7 @@ def main():
 
     (lBegin, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eyebrow"]
     (rBegin, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eyebrow"]
-     
+    
     f_transform = build_transforms(cfg, is_train=False, is_face=True)
     c_transform = build_transforms(cfg, is_train=False, is_face=False)
 
@@ -63,9 +63,7 @@ def main():
     long_seq_prob = deque([])
     long_seq_size = 64
     window_size = 16
-    # ----- 20210722 ----- #
-    video_features = []  # list of all the features along time of a whole video
-    # -------------------- #
+
     if (cap.isOpened()== False): 
         print("Error opening video stream or file")
     while(cap.isOpened()):
@@ -106,16 +104,8 @@ def main():
                     f_tensor = torch.stack(list(copy.deepcopy(f_stack))).to(device)
                     c_tensor = torch.stack(list(copy.deepcopy(c_stack))).to(device)
 
-                    # ----- 20210722 ----- #
-                    # output = model(f_tensor, c_tensor).mean(0)
-                    output, features = model(f_tensor, c_tensor)
-                    features = features.mean(0)
-                    output = output.mean(0)
-                    # ----- 20210722 ----- #
-                    # model_output.append(output.cpu().tolist())
-                    # -------------------- #
-                    video_features.append(features.cpu().tolist())
-                    # -------------------- #
+                    output = model(f_tensor, c_tensor).mean(0)
+
                     pred_class = output.argmax()
                     pred_label = label_template[pred_class]
                     arousal_label = ''
@@ -176,10 +166,6 @@ def main():
                     cv2.imshow('frame', frame)
         else: 
             break
-
-    # ----- 20210722 ----- #
-    torch.save(video_features, "output/model_output_test_mp4.pth")
-    # -------------------- #
 
     cap.release()
     cv2.destroyAllWindows()
