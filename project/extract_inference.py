@@ -42,7 +42,7 @@ def main():
                 video_path = video.absolute()
                 count_annotated += 1
                 print(count_annotated, video_path)
-                infer(video_path=video_path, video_name=video_name)
+                infer(video_path=str(video_path), video_name=video_name)
             else:
                 print(f"Not Annotated: {video}")
     print(f"Total number of annotated videos: {count_annotated}")
