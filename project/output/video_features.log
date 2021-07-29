@@ -1,0 +1,42 @@
+extracted at 20210729
+
+(MyThesis-main) chihyuan@vision:~/MyThesis-main/project$ python extract_inference.py 
+1 /myHDD/chihyuan_data/schizo_data/VID_20201116_104730.mp4
+extract_inference.py:242: RuntimeWarning: invalid value encountered in double_scalars
+  normalized_value = abs(disp - np.min(points))/abs(np.max(points) - np.min(points))
+extract_inference.py:242: RuntimeWarning: divide by zero encountered in double_scalars
+  normalized_value = abs(disp - np.min(points))/abs(np.max(points) - np.min(points))
+/home/chihyuan/anaconda3/envs/MyThesis-main/lib/python3.6/site-packages/face_alignment/api.py:132: UserWarning: No faces were detected.
+  warnings.warn("No faces were detected.")
+2 /myHDD/chihyuan_data/schizo_data/20201127/VID_20201127_103507.mp4
+3 /myHDD/chihyuan_data/schizo_data/20201125-1/VID_20201125_140623.mp4
+4 /myHDD/chihyuan_data/schizo_data/20201214-1/VID_20201214_105415.mp4
+5 /myHDD/chihyuan_data/schizo_data/20201210-1/VID_20201210_100205.mp4
+Not Annotated: /myHDD/chihyuan_data/schizo_data/20201210-1/VID_20201210_095947.mp4
+6 /myHDD/chihyuan_data/schizo_data/20201210-2/VID_20201210_102622.mp4
+7 /myHDD/chihyuan_data/schizo_data/20201221-1/VID_20201221_105853.mp4
+8 /myHDD/chihyuan_data/schizo_data/20201207-1/VID_20201207_110519.mp4
+Not Annotated: /myHDD/chihyuan_data/schizo_data/20201221-2/VID_20201221_112224.mp4
+9 /myHDD/chihyuan_data/schizo_data/20201214-2/VID_20201214_111125.mp4
+10 /myHDD/chihyuan_data/schizo_data/20201207-2/VID_20201207_113034.mp4
+11 /myHDD/chihyuan_data/schizo_data/20201130-1/VID_20201130_104345.mp4
+12 /myHDD/chihyuan_data/schizo_data/20201125-2/VID_20201125_143314.mp4
+Not Annotated: /myHDD/chihyuan_data/schizo_data/20201130-2/VID_20201130_112141.mp4
+13 /myHDD/chihyuan_data/schizo_data/20201130-2/VID_20201130_112235.mp4
+14 /myHDD/chihyuan_data/schizo_data/20201125-3/VID_20201125_150745.mp4
+15 /myHDD/chihyuan_data/schizo_data/20210111-2.MP4
+16 /myHDD/chihyuan_data/schizo_data/20210201.MP4
+17 /myHDD/chihyuan_data/schizo_data/20201228-2.MP4
+18 /myHDD/chihyuan_data/schizo_data/20210111-1.MP4
+Not Annotated: /myHDD/chihyuan_data/schizo_data/20210419.MP4
+19 /myHDD/chihyuan_data/schizo_data/20210222-1.MP4
+20 /myHDD/chihyuan_data/schizo_data/20210308-2.MP4
+Not Annotated: /myHDD/chihyuan_data/schizo_data/20210426-1.MP4
+Not Annotated: /myHDD/chihyuan_data/schizo_data/20210426-2.MP4
+21 /myHDD/chihyuan_data/schizo_data/20201228-1.MP4
+22 /myHDD/chihyuan_data/schizo_data/20210406.MP4
+23 /myHDD/chihyuan_data/schizo_data/20210308-1.MP4
+24 /myHDD/chihyuan_data/schizo_data/20210222-2.MP4
+25 /myHDD/chihyuan_data/schizo_data/20201228-3.MP4
+26 /myHDD/chihyuan_data/schizo_data/20210118.MP4
+Total number of annotated videos: 26
