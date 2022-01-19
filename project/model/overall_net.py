@@ -71,7 +71,9 @@ class Net(nn.Module):
             restrict_loss = torch.cat([pos_loss, neg_loss], dim=0).norm(p=2) / b
             return output * self.s, self.gap(f_feat).view(b, -1), self.gap(c_feat).view(b, -1), restrict_loss
         else:
+            # ----- 20220119 ----- #
             # ----- 20210727 ----- #
             return output
             # return output, features  # return features before classifier, Size([N, 256])
+            # -------------------- #
             # -------------------- #
