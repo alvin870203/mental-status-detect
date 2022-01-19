@@ -69,7 +69,7 @@ def main():
     while(cap.isOpened()):
         ret, frame = cap.read()
         if ret == True:
-            if cv2.waitKey(25) & 0xFF == ord('q'):
+            if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
             frame = cv2.resize(frame,None,fx=0.5,fy=0.5,interpolation=cv2.INTER_CUBIC)  
             # cv2.imwrite('./test.png', frame)

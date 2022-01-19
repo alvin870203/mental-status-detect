@@ -72,6 +72,6 @@ class Net(nn.Module):
             return output * self.s, self.gap(f_feat).view(b, -1), self.gap(c_feat).view(b, -1), restrict_loss
         else:
             # ----- 20210727 ----- #
-            # return output
-            return output, features  # return features before classifier, Size([N, 256])
+            return output
+            # return output, features  # return features before classifier, Size([N, 256])
             # -------------------- #
